@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="A place for everything. Organize your belongings, boxes, and 3D printing filament with StoreIt.">
+  <title>StoreIt — A place for everything</title>
+  <link rel="icon" href="{% static 'storeit_app/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'storeit_app/app.css' %}?v=20260918">
+  <script src="{% static 'storeit_app/app.js' %}?v=20260918" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#overview" aria-label="StoreIt overview"><span class="brand-mark" data-icon="brand"></span>storeit<span class="brand-dot">.</span></a>
+    <div class="workspace"><span class="workspace-icon" data-icon="home"></span><div><strong>My workspace</strong><small>Personal space</small></div><span class="workspace-badge">LOCAL</span></div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav id="navigation">
+      <a href="#overview" data-page="overview"><span data-icon="dashboard"></span>Overview</a>
+      <a href="#inventory" data-page="inventory"><span data-icon="grid"></span>All inventory<span class="nav-count" id="inventory-count">0</span></a>
+      <a href="#boxes" data-page="boxes"><span data-icon="box"></span>Boxes</a>
+      <a href="#filaments" data-page="filaments"><span data-icon="spool"></span>Filaments<span class="new-pill">NEW</span></a>
+      <a href="#locations" data-page="locations"><span data-icon="pin"></span>Locations</a>
+      <div class="nav-divider"></div>
+      <a href="#favorites" data-page="favorites"><span data-icon="star"></span>Favorites</a>
+      <a href="#activity" data-page="activity"><span data-icon="activity"></span>Activity</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="side-note"><span class="side-note-icon" data-icon="sprout"></span><strong>Less searching.<br>More making.</strong><p>A little organization goes a long way.</p><button class="text-button" id="tips-button">Get to know StoreIt <span data-icon="arrow-right"></span></button></div><button class="profile" id="workspace-button"><span class="avatar">ME</span><span><strong>My personal workspace</strong><small><i></i> Saved on this device</small></span><span data-icon="chevron-right"></span></button></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><div class="breadcrumb"><button class="icon-button mobile-menu" aria-label="Toggle navigation" id="menu-button"><span data-icon="menu"></span></button><span class="crumb-home" data-icon="home"></span><span class="slash">/</span><span id="breadcrumb-page">Overview</span></div><div class="topbar-actions"><label class="global-search"><span data-icon="search"></span><input id="global-search" placeholder="Find anything in your space..." aria-label="Search all inventory"><kbd>⌘ K</kbd></label><button class="icon-button notification-button" id="alerts-button" aria-label="View low-stock items"><span data-icon="bell"></span><i id="alert-dot"></i></button><span class="top-avatar">ME</span></div></header>
+    <main id="main" tabindex="-1"><div class="loading-state">Getting your space ready…</div></main>
+    <footer><span><span class="tiny-brand" data-icon="brand"></span> A little more organized. A lot more peace of mind.</span><span>Made for your everyday.</span></footer>
+  </div>
+  <dialog id="modal"><div id="modal-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

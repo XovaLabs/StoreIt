@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('xovalabs_web_app.urls')),
+    path('', include('storeit_app.urls')),
     path('admin/', admin.site.urls),
 ]
